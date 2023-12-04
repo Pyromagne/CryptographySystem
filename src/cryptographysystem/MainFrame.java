@@ -45,7 +45,6 @@ public class MainFrame extends javax.swing.JFrame {
         AssymetricPublicKey.setEditable(false);
         AssymetricPrivateKey.setEditable(false);
         AsymmetricClearTextArea.setEditable(false);
-        AsymmetricCipherTextArea.setEditable(false);
         HybridEncryptedTextArea.setEditable(false);
         HybridPublicKey.setEditable(false);
         HybridPrivateKey.setEditable(false);
@@ -273,17 +272,14 @@ public class MainFrame extends javax.swing.JFrame {
         AsymmetricPlainTextArea = new javax.swing.JTextArea();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        AsymmetricCipherTextArea = new javax.swing.JTextArea();
+        AsymmetricPublicKeyField = new javax.swing.JTextArea();
         EncryptAsymmetricButton = new javax.swing.JButton();
-        ExportAsymmetricCipherButton = new javax.swing.JButton();
         ImportAsymmetricCipherButton = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         GenerateKeyPair = new javax.swing.JButton();
         AssymetricPrivateKey = new javax.swing.JTextField();
         AssymetricPublicKey = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        AsymmetricPublicKeyField = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         DecryptionPanel3 = new javax.swing.JPanel();
@@ -349,6 +345,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         AboutPanel = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
         AuthorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -711,60 +708,19 @@ public class MainFrame extends javax.swing.JFrame {
 
         SymmetricPanel.setLayout(new java.awt.CardLayout());
 
-        EncyptionPanel2.setLayout(new java.awt.GridBagLayout());
-
         jLabel7.setText("Plain Text");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 6, 0, 0);
-        EncyptionPanel2.add(jLabel7, gridBagConstraints);
 
         SymmetricPlainTextArea.setColumns(20);
         SymmetricPlainTextArea.setLineWrap(true);
         SymmetricPlainTextArea.setRows(5);
         jScrollPane5.setViewportView(SymmetricPlainTextArea);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 276;
-        gridBagConstraints.ipady = 154;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 0);
-        EncyptionPanel2.add(jScrollPane5, gridBagConstraints);
-
         jLabel9.setText("Encrypted Text");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 64, 0, 0);
-        EncyptionPanel2.add(jLabel9, gridBagConstraints);
 
         SymmetricCipherTextArea.setColumns(20);
         SymmetricCipherTextArea.setLineWrap(true);
         SymmetricCipherTextArea.setRows(5);
         jScrollPane6.setViewportView(SymmetricCipherTextArea);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 276;
-        gridBagConstraints.ipady = 154;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(18, 64, 0, 0);
-        EncyptionPanel2.add(jScrollPane6, gridBagConstraints);
 
         EncryptSymmetricButton.setText("Encrypt");
         EncryptSymmetricButton.addActionListener(new java.awt.event.ActionListener() {
@@ -772,12 +728,6 @@ public class MainFrame extends javax.swing.JFrame {
                 EncryptSymmetricButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 40, 19, 6);
-        EncyptionPanel2.add(EncryptSymmetricButton, gridBagConstraints);
 
         ExportSymmetricCipherButton.setText("Export");
         ExportSymmetricCipherButton.setEnabled(false);
@@ -786,13 +736,6 @@ public class MainFrame extends javax.swing.JFrame {
                 ExportSymmetricCipherButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 40, 0, 6);
-        EncyptionPanel2.add(ExportSymmetricCipherButton, gridBagConstraints);
 
         ImportSymmetricCipherButton.setText("Import");
         ImportSymmetricCipherButton.addActionListener(new java.awt.event.ActionListener() {
@@ -800,31 +743,8 @@ public class MainFrame extends javax.swing.JFrame {
                 ImportSymmetricCipherButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 40, 0, 6);
-        EncyptionPanel2.add(ImportSymmetricCipherButton, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 156;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 18, 0, 0);
-        EncyptionPanel2.add(SymmetricKeyPassword, gridBagConstraints);
-        SymmetricKeyPassword.getAccessibleContext().setAccessibleName("");
-        SymmetricKeyPassword.getAccessibleContext().setAccessibleDescription("");
 
         jLabel8.setText("Secret Key");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 0);
-        EncyptionPanel2.add(jLabel8, gridBagConstraints);
 
         SymmetricButtonBroup1.add(jRadioButton1);
         jRadioButton1.setSelected(true);
@@ -834,13 +754,6 @@ public class MainFrame extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 64, 0, 0);
-        EncyptionPanel2.add(jRadioButton1, gridBagConstraints);
 
         SymmetricButtonBroup1.add(jRadioButton2);
         jRadioButton2.setText("File");
@@ -849,14 +762,6 @@ public class MainFrame extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 6, 0, 0);
-        EncyptionPanel2.add(jRadioButton2, gridBagConstraints);
 
         SIButton.setText("Encrypt file");
         SIButton.setEnabled(false);
@@ -865,36 +770,84 @@ public class MainFrame extends javax.swing.JFrame {
                 SIButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 149, 0, 0);
-        EncyptionPanel2.add(SIButton, gridBagConstraints);
 
         SymmetricEncryptFilePlaceHolder.setText("[File]");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 266;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 64, 0, 0);
-        EncyptionPanel2.add(SymmetricEncryptFilePlaceHolder, gridBagConstraints);
+
+        javax.swing.GroupLayout EncyptionPanel2Layout = new javax.swing.GroupLayout(EncyptionPanel2);
+        EncyptionPanel2.setLayout(EncyptionPanel2Layout);
+        EncyptionPanel2Layout.setHorizontalGroup(
+            EncyptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel7)
+                .addGap(305, 305, 305)
+                .addComponent(jLabel9))
+            .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(SymmetricKeyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jRadioButton1)
+                .addGap(6, 6, 6)
+                .addComponent(jRadioButton2))
+            .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                .addGap(694, 694, 694)
+                .addComponent(ImportSymmetricCipherButton))
+            .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                .addGap(209, 209, 209)
+                .addComponent(SIButton)
+                .addGap(64, 64, 64)
+                .addComponent(SymmetricEncryptFilePlaceHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(ExportSymmetricCipherButton))
+            .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                .addGap(694, 694, 694)
+                .addComponent(EncryptSymmetricButton))
+        );
+        EncyptionPanel2Layout.setVerticalGroup(
+            EncyptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(EncyptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
+                .addGroup(EncyptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(EncyptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel8))
+                    .addComponent(SymmetricKeyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
+                .addGap(6, 6, 6)
+                .addComponent(ImportSymmetricCipherButton)
+                .addGap(18, 18, 18)
+                .addGroup(EncyptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SIButton)
+                    .addGroup(EncyptionPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(SymmetricEncryptFilePlaceHolder))
+                    .addComponent(ExportSymmetricCipherButton))
+                .addGap(18, 18, 18)
+                .addComponent(EncryptSymmetricButton))
+        );
+
+        SymmetricKeyPassword.getAccessibleContext().setAccessibleName("");
+        SymmetricKeyPassword.getAccessibleContext().setAccessibleDescription("");
 
         SymmetricTabPanel.addTab("Encrypt", EncyptionPanel2);
 
-        DecryptionPanel2.setLayout(new java.awt.GridBagLayout());
-
         jLabel10.setText("Cipher Text");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 6, 0, 0);
-        DecryptionPanel2.add(jLabel10, gridBagConstraints);
 
         SymmetricEncryptedTextArea.setColumns(20);
         SymmetricEncryptedTextArea.setLineWrap(true);
@@ -910,45 +863,12 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(SymmetricEncryptedTextArea);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 276;
-        gridBagConstraints.ipady = 154;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 0);
-        DecryptionPanel2.add(jScrollPane7, gridBagConstraints);
-
         jLabel12.setText("Decrypted Text");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 64, 0, 0);
-        DecryptionPanel2.add(jLabel12, gridBagConstraints);
 
         SymmetricClearTextArea.setColumns(20);
         SymmetricClearTextArea.setLineWrap(true);
         SymmetricClearTextArea.setRows(5);
         jScrollPane8.setViewportView(SymmetricClearTextArea);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 276;
-        gridBagConstraints.ipady = 154;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(18, 64, 0, 0);
-        DecryptionPanel2.add(jScrollPane8, gridBagConstraints);
 
         DecryptSymmetricButton2.setText("Decrypt");
         DecryptSymmetricButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -956,12 +876,6 @@ public class MainFrame extends javax.swing.JFrame {
                 DecryptSymmetricButton2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 40, 19, 6);
-        DecryptionPanel2.add(DecryptSymmetricButton2, gridBagConstraints);
 
         ImportSymmetricCipherButton2.setText("Import");
         ImportSymmetricCipherButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -969,12 +883,6 @@ public class MainFrame extends javax.swing.JFrame {
                 ImportSymmetricCipherButton2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 40, 0, 6);
-        DecryptionPanel2.add(ImportSymmetricCipherButton2, gridBagConstraints);
 
         ExportSymmetricCipherButton2.setText("Export");
         ExportSymmetricCipherButton2.setEnabled(false);
@@ -983,39 +891,10 @@ public class MainFrame extends javax.swing.JFrame {
                 ExportSymmetricCipherButton2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 40, 0, 6);
-        DecryptionPanel2.add(ExportSymmetricCipherButton2, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 156;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 12, 0, 0);
-        DecryptionPanel2.add(SymmetricKeyPassword1, gridBagConstraints);
 
         jLabel11.setText("Secret Key");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 0);
-        DecryptionPanel2.add(jLabel11, gridBagConstraints);
 
         SymmetricDecryptFilePlaceHolder.setText("[File]");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 266;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 64, 0, 0);
-        DecryptionPanel2.add(SymmetricDecryptFilePlaceHolder, gridBagConstraints);
 
         SEButton.setText("Decrypt file");
         SEButton.setEnabled(false);
@@ -1024,13 +903,6 @@ public class MainFrame extends javax.swing.JFrame {
                 SEButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 142, 0, 0);
-        DecryptionPanel2.add(SEButton, gridBagConstraints);
 
         SymmetricButtonBroup2.add(jRadioButton3);
         jRadioButton3.setText("File");
@@ -1039,14 +911,6 @@ public class MainFrame extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 6, 0, 0);
-        DecryptionPanel2.add(jRadioButton3, gridBagConstraints);
 
         SymmetricButtonBroup2.add(jRadioButton4);
         jRadioButton4.setSelected(true);
@@ -1056,13 +920,75 @@ public class MainFrame extends javax.swing.JFrame {
                 jRadioButton4ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 64, 0, 0);
-        DecryptionPanel2.add(jRadioButton4, gridBagConstraints);
+
+        javax.swing.GroupLayout DecryptionPanel2Layout = new javax.swing.GroupLayout(DecryptionPanel2);
+        DecryptionPanel2.setLayout(DecryptionPanel2Layout);
+        DecryptionPanel2Layout.setHorizontalGroup(
+            DecryptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel10)
+                .addGap(296, 296, 296)
+                .addComponent(jLabel12))
+            .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addComponent(SymmetricKeyPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jRadioButton4)
+                .addGap(6, 6, 6)
+                .addComponent(jRadioButton3))
+            .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                .addGap(694, 694, 694)
+                .addComponent(ImportSymmetricCipherButton2))
+            .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                .addGap(208, 208, 208)
+                .addComponent(SEButton)
+                .addGap(64, 64, 64)
+                .addComponent(SymmetricDecryptFilePlaceHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(ExportSymmetricCipherButton2))
+            .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                .addGap(694, 694, 694)
+                .addComponent(DecryptSymmetricButton2))
+        );
+        DecryptionPanel2Layout.setVerticalGroup(
+            DecryptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(DecryptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel12))
+                .addGap(18, 18, 18)
+                .addGroup(DecryptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(DecryptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel11))
+                    .addComponent(SymmetricKeyPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton3))
+                .addGap(6, 6, 6)
+                .addComponent(ImportSymmetricCipherButton2)
+                .addGap(18, 18, 18)
+                .addGroup(DecryptionPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SEButton)
+                    .addGroup(DecryptionPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(SymmetricDecryptFilePlaceHolder))
+                    .addComponent(ExportSymmetricCipherButton2))
+                .addGap(18, 18, 18)
+                .addComponent(DecryptSymmetricButton2))
+        );
 
         SymmetricTabPanel.addTab("Decrypt", DecryptionPanel2);
 
@@ -1106,25 +1032,17 @@ public class MainFrame extends javax.swing.JFrame {
         AsymmetricPlainTextArea.setRows(5);
         jScrollPane9.setViewportView(AsymmetricPlainTextArea);
 
-        jLabel16.setText("Encrypted Text (non-byte)");
+        jLabel16.setText("Public Key");
 
-        AsymmetricCipherTextArea.setColumns(20);
-        AsymmetricCipherTextArea.setLineWrap(true);
-        AsymmetricCipherTextArea.setRows(5);
-        jScrollPane10.setViewportView(AsymmetricCipherTextArea);
+        AsymmetricPublicKeyField.setColumns(20);
+        AsymmetricPublicKeyField.setLineWrap(true);
+        AsymmetricPublicKeyField.setRows(5);
+        jScrollPane10.setViewportView(AsymmetricPublicKeyField);
 
         EncryptAsymmetricButton.setText("Encrypt");
         EncryptAsymmetricButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EncryptAsymmetricButtonActionPerformed(evt);
-            }
-        });
-
-        ExportAsymmetricCipherButton.setText("Export");
-        ExportAsymmetricCipherButton.setEnabled(false);
-        ExportAsymmetricCipherButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExportAsymmetricCipherButtonActionPerformed(evt);
             }
         });
 
@@ -1151,8 +1069,6 @@ public class MainFrame extends javax.swing.JFrame {
                 AssymetricPublicKeyActionPerformed(evt);
             }
         });
-
-        jLabel23.setText("Public Key");
 
         jButton5.setText("Export Public Key");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -1202,10 +1118,7 @@ public class MainFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel17)
                                     .addGap(31, 31, 31)
                                     .addComponent(AssymetricPublicKey, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(62, 62, 62)
-                                    .addComponent(jLabel23)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(AsymmetricPublicKeyField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(356, 356, 356))
                                 .addGroup(EncyptionPanel3Layout.createSequentialGroup()
                                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(64, 64, 64)
@@ -1213,7 +1126,6 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(EncyptionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ImportAsymmetricCipherButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ExportAsymmetricCipherButton, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(EncryptAsymmetricButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -1233,11 +1145,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(AssymetricPublicKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(EncyptionPanel3Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addGroup(EncyptionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addGroup(EncyptionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel23)
-                                .addComponent(AsymmetricPublicKeyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jLabel17)))
+                .addGap(3, 3, 3)
                 .addGroup(EncyptionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EncyptionPanel3Layout.createSequentialGroup()
                         .addGap(11, 11, 11)
@@ -1255,8 +1164,6 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EncyptionPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ImportAsymmetricCipherButton)
-                .addGap(18, 18, 18)
-                .addComponent(ExportAsymmetricCipherButton)
                 .addGap(18, 18, 18)
                 .addComponent(EncryptAsymmetricButton)
                 .addContainerGap())
@@ -1676,21 +1583,29 @@ public class MainFrame extends javax.swing.JFrame {
 
         MainLayeredPane.add(HyridPanel, "card3");
 
+        jLabel35.setText("<html>\n<p>Bestlink College of the Philippines 2023</p>\n<br />\n<p align=\"justify\">This program is dedicated to exploring various encryption techniques for academic purposes, aiming to provide a comprehensive overview of fundamental methods essential for information security. The contents focus on basic approaches such as Caesar encryption, alongside more advanced algorithms like AES (Advanced Encryption Standard) and RSA (Rivest–Shamir–Adleman). The goal is to clarify the basic principles and applications of each encryption type, culminating in the discussion of hybrid encryption systems. This academic section seeks to deepen understanding and appreciation for the role of encryption in safeguarding information integrity, confidentiality, and authenticity within the realm of cybersecurity.</p>\n<br />\n<br />\n<br />\n<p>BSIT 3108</p>\n<br />\n<p>Aron III</p>\n<p>Alde</p>\n<p>Laserna</p>\n<p>Batocabe</p>\n<p>Reyes</p>\n<p>Santos</p>\n</html>");
+
         javax.swing.GroupLayout AboutPanelLayout = new javax.swing.GroupLayout(AboutPanel);
         AboutPanel.setLayout(AboutPanelLayout);
         AboutPanelLayout.setHorizontalGroup(
             AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(AboutPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
+                .addContainerGap())
         );
         AboutPanelLayout.setVerticalGroup(
             AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(AboutPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MainLayeredPane.add(AboutPanel, "card6");
 
         AuthorLabel.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        AuthorLabel.setText("[SCHOOL PURPOSES] BCP BSIT-3108 2023-2024");
+        AuthorLabel.setText("[ACADEMIC PURPOSES] BCP BSIT-3108 2023");
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -2133,7 +2048,7 @@ public class MainFrame extends javax.swing.JFrame {
         ImportTextFile(AsymmetricPlainTextArea);
     }//GEN-LAST:event_ImportAsymmetricCipherButtonActionPerformed
 
-    private void ExportAsymmetricCipherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportAsymmetricCipherButtonActionPerformed
+    private void EncryptAsymmetricButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncryptAsymmetricButtonActionPerformed
         // TODO add your handling code here:
         PublicKey publickey;
         String message = AsymmetricPlainTextArea.getText();
@@ -2165,40 +2080,6 @@ public class MainFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error: Failed to encrypt the file.", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_ExportAsymmetricCipherButtonActionPerformed
-
-    private void EncryptAsymmetricButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncryptAsymmetricButtonActionPerformed
-        // TODO add your handling code here:
-        PublicKey publickey;
-        String message = AsymmetricPlainTextArea.getText();
-        String pub = AsymmetricPublicKeyField.getText();
-            
-
-        // Check if message is not empty
-        if (message.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Error: Message cannot be empty.", "Error", JOptionPane.ERROR_MESSAGE);
-
-            return; // Stop further execution
-        }
-        
-        // Check if pub is not empty
-        if (pub.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Error: Public key is needed.", "Error", JOptionPane.ERROR_MESSAGE);
-
-            return; // Stop further execution
-        }
-            
-        try {
-            publickey = AsymmetricEncryption.getPublicKeyFromX509String(pub);
-            byte[] encryptedMessage = AsymmetricEncryption.encrypt(message, publickey);
-            
-            MB = AsymmetricEncryption.encrypt(AsymmetricPlainTextArea.getText(), publickey);
-            AsymmetricCipherTextArea.setText(new String(encryptedMessage));
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Error: Failed to encrypt the message.", "Error", JOptionPane.ERROR_MESSAGE);
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ExportAsymmetricCipherButton.setEnabled(true);
     }//GEN-LAST:event_EncryptAsymmetricButtonActionPerformed
 
     private void ExportAsymmetricCipherButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportAsymmetricCipherButton2ActionPerformed
@@ -2659,13 +2540,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Assymetric;
     private javax.swing.JTextField AssymetricPrivateKey;
     private javax.swing.JTextField AssymetricPublicKey;
-    private javax.swing.JTextArea AsymmetricCipherTextArea;
     private javax.swing.JTextArea AsymmetricClearTextArea;
     private javax.swing.JLabel AsymmetricDecryptFilePlaceHolder;
     private javax.swing.JPanel AsymmetricPanel;
     private javax.swing.JTextArea AsymmetricPlainTextArea;
     private javax.swing.JTextArea AsymmetricPrivateKeyField;
-    private javax.swing.JTextField AsymmetricPublicKeyField;
+    private javax.swing.JTextArea AsymmetricPublicKeyField;
     private javax.swing.JTabbedPane AsymmetricTabPanel;
     private javax.swing.JLabel AuthorLabel;
     private javax.swing.JButton Caesar;
@@ -2693,7 +2573,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel EncyptionPanel2;
     private javax.swing.JPanel EncyptionPanel3;
     private javax.swing.JPanel EncyptionPanel4;
-    private javax.swing.JButton ExportAsymmetricCipherButton;
     private javax.swing.JButton ExportAsymmetricCipherButton2;
     private javax.swing.JButton ExportCaesarCipherButton;
     private javax.swing.JButton ExportCaesarCipherButton2;
@@ -2770,7 +2649,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -2783,6 +2661,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
